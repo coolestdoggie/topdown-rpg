@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
         Flip();
 
-        if(HasCollisionOnXAxis()) transform.Translate(moveDelta.x * Time.deltaTime, 0f, 0f);
+        if(!HasCollisionOnXAxis()) transform.Translate(moveDelta.x * Time.deltaTime, 0f, 0f);
         if(!HasCollisionOnYAxis()) transform.Translate(0f, moveDelta.y * Time.deltaTime, 0f);
     }
 
