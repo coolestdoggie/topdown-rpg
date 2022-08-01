@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2820858146283853207}
   - component: {fileID: 2820858146283853204}
   - component: {fileID: 7939276624582475167}
+  - component: {fileID: 6843860918864740364}
   m_Layer: 0
-  m_Name: Interactable
+  m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1177147869
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2355505969325306380, guid: a5b653535fd864548bd5ba48c2a83a1a, type: 3}
+  m_Sprite: {fileID: -4237532329049844237, guid: a5b653535fd864548bd5ba48c2a83a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,3 +110,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15884322, y: 0.13949092}
   m_EdgeRadius: 0
+--- !u!114 &6843860918864740364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820858146283853205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b84e52e75ad50e4cbf2e0a2a1947e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  emptyChest: {fileID: 2669436491556051002, guid: a5b653535fd864548bd5ba48c2a83a1a, type: 3}
+  pesosAmount: 10

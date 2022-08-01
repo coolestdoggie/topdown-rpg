@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Collidable : MonoBehaviour
 {
-    [SerializeField] private ContactFilter2D filter;
+    public ContactFilter2D filter;
 
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
     
     protected virtual void Start()
     {
-        boxCollider = new BoxCollider2D();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     protected virtual void Update()
@@ -21,8 +21,14 @@ public class Collidable : MonoBehaviour
         {
             if (hits[i] == null) continue;
 
+            OnCollide(hits[i]);
+            
             hits[i] = null;
         }
+    }
 
+    protected virtual void OnCollide(Collider2D coll)
+    {
+        Debug.Log(coll.name);
     }
 }
