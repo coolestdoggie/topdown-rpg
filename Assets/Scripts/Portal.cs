@@ -8,7 +8,10 @@ public class Portal : Collidable
     [SerializeField] private string[] sceneNames;
     protected override void OnCollide(Collider2D coll)
     {
-        string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
-        SceneManager.LoadScene(sceneName);
+        if (coll.name == "Player")
+        {
+            string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
