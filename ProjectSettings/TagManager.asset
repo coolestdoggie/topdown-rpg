@@ -50,9 +50,9 @@ TagManager:
   - name: Collision
     uniqueID: 2275716537
     locked: 0
-  - name: Actor
-    uniqueID: 2088155495
-    locked: 0
   - name: Interactable
     uniqueID: 3117819427
+    locked: 0
+  - name: Actor
+    uniqueID: 2088155495
     locked: 0
