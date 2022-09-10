@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class FloatingText
 {
-    private bool isActive;
-    private GameObject gameObject;
-    private TMP_Text text;
-    private Vector3 motion;
-    private float lastShown;
-    private float duration;
+    public bool isActive;
+    public GameObject gameObject;
+    public TMP_Text text;
+    public Vector3 motion;
+    public float lastShown;
+    public float duration;
 
     private void Show()
     {
