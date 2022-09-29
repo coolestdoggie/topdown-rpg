@@ -12,20 +12,26 @@ public class FloatingText
     public float lastShown;
     public float duration;
 
-    private void Show()
+    public string Text
+    {
+        get => text.text;
+        set { text.text = value; }
+    }
+
+    public void Show()
     {
         isActive = true;
         lastShown = Time.time;
         gameObject.SetActive(isActive);
     }
 
-    private void Hide()
+    public void Hide()
     {
         isActive = false;
         gameObject.SetActive(isActive);
     }
 
-    void UpdateFloatingText()
+    public void UpdateFloatingText()
     {
         if (!isActive) return;
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,14 +11,25 @@ public class FloatingTextManager : MonoBehaviour
     
     private List<FloatingText> floatingTexts = new List<FloatingText>();
 
+    private void Update()
+    {
+        foreach (FloatingText txt in floatingTexts)
+        {
+            txt.UpdateFloatingText();
+        }
+    }
+
     private void Show(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         FloatingText floatingText = GetFloatingText();
-        floatingText.text.text = message;
-        floatingText.text.color = color;
+        floatingText.Text = message;
         floatingText.text.fontSize = fontSize;
-        floatingText.gameObject.transform.position = position;
-        floatingText.text = message;
+        floatingText.text.color = color;
+        floatingText.gameObject.transform.position = Camera.main.WorldToScreenPoint(position);
+        floatingText.motion = motion;
+        floatingText.duration = duration;
+
+        floatingText.Show();
     }
     private FloatingText GetFloatingText()
     {
@@ -34,15 +46,5 @@ public class FloatingTextManager : MonoBehaviour
         }
 
         return text;
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
