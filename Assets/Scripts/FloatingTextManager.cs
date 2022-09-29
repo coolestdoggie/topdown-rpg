@@ -19,7 +19,7 @@ public class FloatingTextManager : MonoBehaviour
         }
     }
 
-    private void Show(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    public void Show(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         FloatingText floatingText = GetFloatingText();
         floatingText.Text = message;

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable;
 
     public Player player;
+    public FloatingTextManager floatingText;
 
     public int pesosAmount;
     public int experienceAmount;
@@ -41,6 +42,11 @@ public class GameManager : MonoBehaviour
         pesosAmount = int.Parse(data[1]);
         experienceAmount = int.Parse(data[2]);
         // TODO: change the weapon level
+    }
+
+    public void ShowText(string message, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        floatingText.Show(message, fontSize, color, position,  motion, duration);
     }
 
     public void SaveState()
