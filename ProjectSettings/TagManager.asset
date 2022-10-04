@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Blocking
   - Actor
-  - 
+  - Weapon
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Actor
     uniqueID: 2088155495
+    locked: 0
+  - name: Weapon
+    uniqueID: 3560287339
     locked: 0
