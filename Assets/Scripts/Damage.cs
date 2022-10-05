@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public Vector3 origin;
-    public int damagePoint = 1;
+    public int damageAmount = 1;
     public float pushForce = 2f;
     
 }
