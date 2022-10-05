@@ -32,6 +32,12 @@ public class Weapon : Collidable
         }
     }
 
+    protected override void OnCollide(Collider2D coll)
+    {
+        base.OnCollide(coll);
+        
+    }
+
     private void Swing()
     {
         throw new System.NotImplementedException();
