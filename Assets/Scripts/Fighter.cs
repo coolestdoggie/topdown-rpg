@@ -22,7 +22,7 @@ public class Fighter : MonoBehaviour
             pushDirection = (transform.position - damage.origin).normalized * damage.pushForce;
 
             GameManager.Instance.ShowText(damage.damageAmount.ToString(), 
-                15, Color.red, transform.position, Vector3.zero, 0.5f);
+                30, Color.red, transform.position, Vector3.zero, 0.5f);
             
             if (hitpoint <= 0)
             {
