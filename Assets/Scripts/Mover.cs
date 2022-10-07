@@ -18,25 +18,23 @@ public abstract class Mover : Fighter
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
-
-    private void FixedUpdate()
-    {
-        //GetInput();
-
-        Flip();
-
-        if (!HasCollisionOnXAxis()) transform.Translate(moveDelta.x * Time.deltaTime, 0f, 0f);
-        if (!HasCollisionOnYAxis()) transform.Translate(0f, moveDelta.y * Time.deltaTime, 0f);
-    }
-
+    
     protected void GetInput()
     {
         moveDeltaX = Input.GetAxisRaw("Horizontal");
         moveDeltaY = Input.GetAxisRaw("Vertical");
 
-        moveDelta = new Vector3(moveDeltaX, moveDeltaY, 0);
+        moveDelta = new Vector3(moveDeltaX * xSpeed, moveDeltaY * ySpeed, 0);
     }
 
+    protected void UpdateMotor(Vector3 input)
+    {
+        Flip();
+
+        if (!HasCollisionOnXAxis()) transform.Translate(moveDelta.x * Time.deltaTime, 0f, 0f);
+        if (!HasCollisionOnYAxis()) transform.Translate(0f, moveDelta.y * Time.deltaTime, 0f);
+    }
+    
     private void Flip()
     {
         if (moveDelta.x > 0) transform.localScale = Vector3.one;

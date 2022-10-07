@@ -7,5 +7,7 @@ public class Player : Mover
     private void FixedUpdate()
     {
         GetInput();
+        
+        UpdateMotor(moveDelta);
     }
 }
