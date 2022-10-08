@@ -28,6 +28,7 @@ public abstract class Mover : Fighter
     protected void UpdateMotor(Vector3 input)
     {
         moveDelta = new Vector3(moveDeltaX * xSpeed, moveDeltaY * ySpeed, 0);
+        
         Flip();
 
         if (!HasCollisionOnXAxis()) transform.Translate(moveDelta.x * Time.deltaTime, 0f, 0f);

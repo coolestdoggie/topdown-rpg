@@ -9,7 +9,7 @@ public class Enemy : Mover
 
     public float triggerLength = 1f;
     public float chaseLength = 5f;
-    private bool chasing;
+    [SerializeField] private bool chasing;
     private bool collidingWithPlayer;
     private Transform playerTransform;
     private Vector3 startingPosition;
@@ -36,7 +36,8 @@ public class Enemy : Mover
         
         if (distanceBtwPlayerNEnemy < chaseLength)
         {
-            chasing = distanceBtwPlayerNEnemy < triggerLength;
+            if (distanceBtwPlayerNEnemy < triggerLength)
+            chasing = true;
 
             if (chasing)
             {
@@ -62,7 +63,7 @@ public class Enemy : Mover
         {
             if (hits[i] == null) continue;
 
-            if (hits[i].tag == "Fighter" && hits[i].GetComponent<Player>() != null)
+            if (hits[i].tag == "Fighter" && hits[i].name == "Player")
             {
                 collidingWithPlayer = true;
             }
