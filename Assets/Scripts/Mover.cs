@@ -14,7 +14,7 @@ public abstract class Mover : Fighter
     protected float ySpeed = 0.75f;
 
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -23,12 +23,11 @@ public abstract class Mover : Fighter
     {
         moveDeltaX = Input.GetAxisRaw("Horizontal");
         moveDeltaY = Input.GetAxisRaw("Vertical");
-
-        moveDelta = new Vector3(moveDeltaX * xSpeed, moveDeltaY * ySpeed, 0);
     }
 
     protected void UpdateMotor(Vector3 input)
     {
+        moveDelta = new Vector3(moveDeltaX * xSpeed, moveDeltaY * ySpeed, 0);
         Flip();
 
         if (!HasCollisionOnXAxis()) transform.Translate(moveDelta.x * Time.deltaTime, 0f, 0f);
